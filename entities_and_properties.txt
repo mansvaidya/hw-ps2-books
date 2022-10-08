@@ -1,0 +1,20 @@
+Database Design Homework
+
+Entities - Libraries, Book Shops, Publishing Houses, 
+
+Properties - ISBN Number, Date of publishing, Book bar code, Author, Date of publishing, Countries allowed to sell the book, 
+
+Students = Books
+PK
+BookID, StoreID, BookISBN, LibraryAvailability, AuthorID, EditorID, IllustratorID, FirstName, LastName, BirthDate, PublishingDate, PublishingHouse, CountriesAllowedToSell, AuthorEmail, AuthorPhone, AuthorHometown, PublishingRegion, PublishingCountry
+FK - StoreID
+
+Colleges = Stores
+PK
+StoreID, StoreAddress, StoreZipcode, City, Region, Country, NumberAvailable, 
+
+
+SELECT columns
+FROM table
+WHERE condition
+ORDER BY columns
