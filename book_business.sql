@@ -21,7 +21,7 @@ CREATE TABLE `Stores` (
 	`Region` 			varchar (10) NOT NULL ,	
 	`Country` 			varchar (10) NOT NULL ,
 	`AvailableCopies`   int NOT NULL 
-
+PRIMARY KEY 
 ); 
 
 -- --------------------------------------
@@ -29,7 +29,8 @@ CREATE TABLE `Stores` (
 -- --------------------------------------
 
 CREATE TABLE `Books` (
-	`BookName` 		            varchar (150) NOT NULL,
+	`Genre`                     int NOT NULL,
+    `BookName` 		            varchar (150) NOT NULL,
 	`BookID` 		            int NOT NULL,
 	`StoreID` 		            int NOT NULL,	
 	`ISBN` 			            int NOT NULL,		
@@ -41,7 +42,8 @@ CREATE TABLE `Books` (
 	`LastName` 				    varchar (20) NOT NULL ,
 	`PublishingDate` 			varchar (20) NOT NULL ,
 	`PublishingHouse` 			varchar (20) NOT NULL ,
-	`CountriesAllowedToSell` 	varchar (20) NOT NULL 
+	`CountriesAllowedToSell` 	varchar (20) NOT NULL ,
+    `NumberOfAuthors`           int NOT NULL
 );
 
 
@@ -54,7 +56,7 @@ CREATE TABLE `Genres` (
 	`Genre` 		            varchar (30) NOT NULL
 );
 
-CREATE TABLE `Genre Details` (
+CREATE TABLE `GenreDetails` (
 	`GenreID` 		            int NOT NULL,
 	`NumberOfBooks` 		    int NOT NULL,
 	`NumberOfAuthors` 		    int NOT NULL	
@@ -64,7 +66,7 @@ CREATE TABLE `Genre Details` (
 --  TABLE AUTHOR ORDERS
 -- --------------------------------------
 
-CREATE TABLE `Author Orders` (
+CREATE TABLE `AuthorOrders` (
 	`AuthorID` 		            int NOT NULL,
 	`FirstName` 		        varchar (30) NOT NULL,
 	`LastName` 		            varchar (15) NOT NULL,
@@ -76,7 +78,7 @@ CREATE TABLE `Author Orders` (
 --  TABLE CUSTOMER ORDERS
 -- --------------------------------------
 
-CREATE TABLE `Customer Orders` (
+CREATE TABLE `CustomerOrders` (
 	`OrderID` 		                int NOT NULL,
 	`OrderDate` 		            date NOT NULL,
 	`CustomerID` 		            int NOT NULL,
