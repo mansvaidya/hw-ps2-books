@@ -1,20 +1,67 @@
 Database Design Homework
 
-Entities - Libraries, Book Shops, Publishing Houses, 
+--------------------------
 
-Properties - ISBN Number, Date of publishing, Book bar code, Author, Date of publishing, Countries allowed to sell the book, 
-
-Students = Books
-PK
-BookID, StoreID, BookISBN, LibraryAvailability, AuthorID, EditorID, IllustratorID, FirstName, LastName, BirthDate, PublishingDate, PublishingHouse, CountriesAllowedToSell, AuthorEmail, AuthorPhone, AuthorHometown, PublishingRegion, PublishingCountry
-FK - StoreID
-
-Colleges = Stores
-PK
-StoreID, StoreAddress, StoreZipcode, City, Region, Country, NumberAvailable, 
+Entities: AuthorOrders, Publishers, Genres, Books, GenreDetails, CustomerOrders, OrderDetails
 
 
-SELECT columns
-FROM table
-WHERE condition
-ORDER BY columns
+Properties 
+	`Authors`
+	AuthorName
+	AuthorID (PK)
+	
+	`Books`
+	Book Name
+	BookID (PK)
+	PublisherID
+	EditorID
+	Genre
+	Price
+	Royalty
+
+	`Publishers`
+	Publisher Name
+	PublisherID(PK)
+
+	`Orders`
+	OrderID(PK)
+	OrderAmount
+
+	`Genres`
+	Genre
+	GenreID (PK)
+
+	`Editors`
+	EditorID (PK)
+	EditorName
+
+	`Customer`
+	CustomerName
+	CustomerID(PK)
+
+	`BookAuthors`
+	BookID
+	AuthorID
+	
+	`OrderDetails`
+	OrderID
+	BookID
+	Price
+	CustomerID
+
+
+
+
+2. 	
+Unique Identifiers: OrderID, GenreID, CustomerID, AuthorID, BookID, PublisherID
+
+
+3. 
+Relationships 
+Authors: Book Authors Ð 1:N
+Publishers, Books Ð 1:N
+Editors, Books- 1:N 
+Orders, OrderDetails-  1:N
+Customer, OrderDetails 1:N
+Books, OrderDetails 1:N
+Books, BookAuthors 1:N
