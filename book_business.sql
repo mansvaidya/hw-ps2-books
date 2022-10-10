@@ -116,18 +116,3 @@ CREATE TABLE `Publishers` (
     INDEX `PublisherName` (`PublisherName` ASC)
     ) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4 COLLATE=utf8mb4_0900_ai_ci;
 
-
-
--- --------------------------------------
---  TABLE EDITORS
--- --------------------------------------
-    
-    CREATE TABLE `Editors` (
-	`EditorID` int NOT NULL AUTO_INCREMENT,
-    `EditorName` varchar (50) NOT NULL,
-    PRIMARY KEY (`EditorID`),
-    INDEX `EditorID` (`EditorID` ASC),
-    INDEX `EditorName` (`EditorName` ASC)
-    ) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4 COLLATE=utf8mb4_0900_ai_ci;
-    
-    
