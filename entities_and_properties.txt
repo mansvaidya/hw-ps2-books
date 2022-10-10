@@ -6,62 +6,73 @@ Entities: AuthorOrders, Publishers, Genres, Books, GenreDetails, CustomerOrders,
 
 
 Properties 
-	`Authors`
-	AuthorName
-	AuthorID (PK)
+---------------------------
+
+	`Stores`
+	StoreName
+	StoreID (PK)
 	
+---------------------------
+
 	`Books`
 	Book Name
 	BookID (PK)
-	PublisherID
-	EditorID
-	Genre
+	StoreID
+	ISBN
+	FirstName
+	LastName
+	PublishingHouse
+	NumberOfAuthors
 	Price
 	Royalty
 
-	`Publishers`
-	Publisher Name
-	PublisherID(PK)
-
-	`Orders`
-	OrderID(PK)
-	OrderAmount
+---------------------------
 
 	`Genres`
-	Genre
+	GenreName
 	GenreID (PK)
-
-	`Editors`
-	EditorID (PK)
-	EditorName
-
-	`Customer`
-	CustomerName
-	CustomerID(PK)
-
-	`BookAuthors`
-	BookID
-	AuthorID
 	
-	`OrderDetails`
-	OrderID
-	BookID
-	Price
+	`GenreDetails`
+	GenreID (PK)
+	NumberOfBooks
+	NumberOfAuthors
+	
+---------------------------
+	
+	`AuthorOrders`
+	AuthorID (PK)
+	FirstName
+	LastName
+	NumberOfBooks
+	NumberOfOrders
+
+---------------------------
+
+	`CustomerOrders`
+	NumberOfBooks
+	OrderID (PK)
 	CustomerID
+	NumberOfPastOrders
+	NumberOfBooks
+	StoreID
+	Price
+	
+---------------------------
+	
+	`Publishers`
+	Publisher Name
+	PublisherID (PK)
+	
+------------------------------------------------------
 
+2. Unique Identifiers: 
+OrderID, GenreID, CustomerID, AuthorID, BookID, PublisherID
 
-
-
-2. 	
-Unique Identifiers: OrderID, GenreID, CustomerID, AuthorID, BookID, PublisherID
-
-
-3. 
-Relationships 
-Authors: Book Authors Ð 1:N
+------------------------------------------------------
+3. Relationships 
+AuthorOrders: Book Authors Ð 1:N
 Publishers, Books Ð 1:N
-Editors, Books- 1:N 
-Orders, OrderDetails-  1:N
+AuthorOrders, OrderDetails-  1:N
 Customer, OrderDetails 1:N
 Books, OrderDetails 1:N
-Books, BookAuthors 1:N
+Books, Author (FirstName and LastName) 1:N
